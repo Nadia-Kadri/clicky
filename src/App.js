@@ -34,11 +34,22 @@ class App extends Component {
     ]
   }
 
+  onClick = (id) => {
+    console.log(id)
+    this.setState({ animals: this.state.animals.map(animal => {
+      if(animal.id === id) {
+        animal.click = true
+      }
+      return animal
+    }) })
+    console.log(this.state.animals)
+  }
+
   render () {
     return (
       <div>
         <Header />
-        <Animals animals={this.state.animals}/>
+        <Animals onClick={this.onClick} animals={this.state.animals}/>
       </div>
     );
   }

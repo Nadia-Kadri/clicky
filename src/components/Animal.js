@@ -2,28 +2,26 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Animal extends Component {
-  onClick = (event) => {
-    console.log("hello")
-  }
-
   render() {
+    const { id, name, imageURL } = this.props.animal
     return (
       <div>
         <img 
-          src={this.props.animal.imageURL} alt={this.props.animal.name} 
+          src={imageURL} alt={name} 
           className="img-responsive" 
           height="15%" 
           width="15%"
-          onClick={this.onClick}
+          onClick={this.props.onClick.bind(this, id)}
         />
-        <div>{this.props.animal.name}</div>
+        <div>{name}</div>
       </div>
     )
   }
 }
 
 Animal.propTypes = {
-  animal: PropTypes.object.isRequired
+  animal: PropTypes.object.isRequired,
+  onClick: PropTypes.func.isRequired
 }
 
 export default Animal;

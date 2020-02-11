@@ -6,14 +6,15 @@ class Animals extends Component {
   render() {
     return ( 
       this.props.animals.map(animal => (
-        <Animal animal={animal}/>
+        <Animal onClick={this.props.onClick} key={animal.id} animal={animal}/>
       ))
     )
   }
 }
 
 Animals.propTypes = {
-  animals: PropTypes.array.isRequired
+  animals: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired
 }
 
 export default Animals;
