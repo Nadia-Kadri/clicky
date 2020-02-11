@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 class Animal extends Component {
   render() {
     const { id, name, imageURL } = this.props.animal
+    console.log(`${id}   ${name}   ${this.props.animal.click}`)
     return (
       <div>
         <img 

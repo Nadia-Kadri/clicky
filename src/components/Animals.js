@@ -4,6 +4,7 @@ import Animal from './Animal';
 
 class Animals extends Component {
   render() {
+    console.log("----------------------")
     return ( 
       this.props.animals.map(animal => (
         <Animal onClick={this.props.onClick} key={animal.id} animal={animal}/>
