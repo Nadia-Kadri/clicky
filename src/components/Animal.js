@@ -5,11 +5,20 @@ class Animal extends Component {
   render() {
     return (
       <div>
-        {this.props.animal.name}
+        <img 
+          src={this.props.animal.imageURL} alt={this.props.animal.name} 
+          className="img-responsive" 
+          height="15%" 
+          width="15%"
+          // onClick={onClick}
+        />
+        <div>{this.props.animal.name}</div>
       </div>
     )
   }
 }
+
+
 
 Animal.propTypes = {
   animal: PropTypes.object.isRequired
