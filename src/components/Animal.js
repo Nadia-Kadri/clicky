@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Animal extends Component {
+  onClick = (event) => {
+    console.log("hello")
+  }
+
   render() {
     return (
       <div>
@@ -10,15 +14,13 @@ class Animal extends Component {
           className="img-responsive" 
           height="15%" 
           width="15%"
-          // onClick={onClick}
+          onClick={this.onClick}
         />
         <div>{this.props.animal.name}</div>
       </div>
     )
   }
 }
-
-
 
 Animal.propTypes = {
   animal: PropTypes.object.isRequired
