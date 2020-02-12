@@ -6,7 +6,7 @@ class Animal extends Component {
     const { id, name, imageURL } = this.props.animal
     console.log(`${id}   ${name}   ${this.props.animal.click}`)
     return (
-      <div>
+      <span>
         <img 
           src={imageURL} alt={name} 
           className="img-responsive" 
@@ -14,8 +14,8 @@ class Animal extends Component {
           width="15%"
           onClick={this.props.onClick.bind(this, id)}
         />
-        <div>{name}</div>
-      </div>
+        {/* {name} */}
+      </span>
     )
   }
 }

@@ -33,6 +33,54 @@ class App extends Component {
         name: 'turtle',
         imageURL: 'images/turtle.jpg',
         click: false
+      },
+      {
+        id: 5,
+        name: 'arcticfox',
+        imageURL: 'images/arcticfox.jpg',
+        click: false
+      },
+      {
+        id: 6,
+        name: 'bunny',
+        imageURL: 'images/bunny.jpg',
+        click: false
+      },
+      {
+        id: 7,
+        name: 'cat',
+        imageURL: 'images/cat.jpg',
+        click: false
+      },
+      {
+        id: 8,
+        name: 'duck',
+        imageURL: 'images/duck.jpg',
+        click: false
+      },
+      {
+        id: 9,
+        name: 'hedgehog',
+        imageURL: 'images/hedgehog.jpg',
+        click: false
+      },
+      {
+        id: 10,
+        name: 'monkey',
+        imageURL: 'images/monkey.jpg',
+        click: false
+      },
+      {
+        id: 11,
+        name: 'pig',
+        imageURL: 'images/pig3.jpg',
+        click: false
+      },
+      {
+        id: 12,
+        name: 'puppy',
+        imageURL: 'images/puppy.jpg',
+        click: false
       }
     ]
   }
