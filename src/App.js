@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import Header from './components/layout/Header';
+import Score from './components/layout/Score';
 import Animals from './components/Animals';
 import './App.css';
 
 
 class App extends Component {
   state = {
+    score: 0,
+    topScore: 0,
     animals: [
       {
         id: 1,
@@ -37,13 +40,13 @@ class App extends Component {
   onClick = (id) => {
     this.setState({ animals: this.state.animals.map(animal => {
       if(animal.id === id) {
-        this.checker(animal)
+        this.checkAnimal(animal)
       }
       return animal
     }) })
   }
 
-  checker = (animal) => {
+  checkAnimal = (animal) => {
     if(animal.click === true) {
       alert("you lose")
       this.setState({ animals: this.state.animals.map(animal => {
@@ -55,10 +58,17 @@ class App extends Component {
     }
   }
 
+  // checkScore = (score, topScore) => {
+  //   if(score > topScore) {
+  //     this.setState({  })
+  //   }
+  // }
+
   render () {
     return (
       <div>
         <Header />
+        <Score />
         <Animals onClick={this.onClick} animals={this.state.animals}/>
       </div>
     );
