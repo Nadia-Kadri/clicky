@@ -10,8 +10,8 @@ class Animal extends Component {
         <img 
           src={imageURL} alt={name} 
           className="img-responsive" 
-          height="15%" 
-          width="15%"
+          height="25%" 
+          width="25%"
           onClick={this.props.onClick.bind(this, id)}
         />
         {/* {name} */}

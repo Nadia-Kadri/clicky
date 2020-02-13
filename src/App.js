@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/layout/Header';
-import Score from './components/layout/Score';
+import Score from './components/Score';
 import Animals from './components/Animals';
 import './App.css';
 
@@ -92,6 +92,8 @@ class App extends Component {
       }
       return animal
     }) })
+    // console.log(this.state.score)
+    // console.log(this.state.topScore)
   }
 
   checkAnimal = (animal) => {
@@ -101,22 +103,33 @@ class App extends Component {
         animal.click = false
         return animal
       }) })
+      this.resetScore()
+      this.checkScore(this.state.score, this.state.topScore)
     } else {
       animal.click = true
+      this.incrementScore()
     }
   }
 
-  // checkScore = (score, topScore) => {
-  //   if(score > topScore) {
-  //     this.setState({  })
-  //   }
-  // }
+  incrementScore = () => {
+    this.setState({ score: this.state.score + 1 })
+  }
+
+  resetScore = () => {
+    this.setState({ score: 0 })
+  }
+
+  checkScore = (score, topScore) => {
+    if(score > topScore) {
+      this.setState({ topScore: score })
+    }
+  }
 
   render () {
     return (
       <div>
         <Header />
-        <Score />
+        <Score score={this.state.score} topScore={this.state.topScore}/>
         <Animals onClick={this.onClick} animals={this.state.animals}/>
       </div>
     );
