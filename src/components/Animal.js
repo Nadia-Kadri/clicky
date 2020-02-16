@@ -14,7 +14,6 @@ class Animal extends Component {
           width="25%"
           onClick={this.props.onClick.bind(this, id)}
         />
-        {/* {name} */}
       </span>
     )
   }

@@ -13,11 +13,12 @@ class Score extends Component {
 }
 
 const scoreStyle = {
-  background: '#333',
+  backgroundImage: "linear-gradient(to right, #54B9EA, #C1C8E4)",
   color: '#fff',
   textAlign: 'center',
   padding: '10px',
-  marginBottom: '10px'
+  marginBottom: '10px',
+  fontSize: '20px'
 }
 
 Score.propTypes = {

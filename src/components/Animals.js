@@ -6,7 +6,7 @@ class Animals extends Component {
   render() {
     console.log("----------------------")
     const shuffledAnimals = shuffleArray(this.props.animals);
-    return ( 
+    return (
       shuffledAnimals.map(animal => (
         <Animal onClick={this.props.onClick} key={animal.id} animal={animal}/>
       ))

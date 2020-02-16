@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/layout/Header';
+import Instructions from './components/layout/Instructions';
 import Score from './components/Score';
 import Animals from './components/Animals';
 import './App.css';
@@ -92,8 +93,6 @@ class App extends Component {
       }
       return animal
     }) })
-    // console.log(this.state.score)
-    // console.log(this.state.topScore)
   }
 
   checkAnimal = (animal) => {
@@ -129,8 +128,11 @@ class App extends Component {
     return (
       <div>
         <Header />
+        <Instructions />
         <Score score={this.state.score} topScore={this.state.topScore}/>
-        <Animals onClick={this.onClick} animals={this.state.animals}/>
+        <div className="container">
+          <Animals onClick={this.onClick} animals={this.state.animals}/>
+        </div>
       </div>
     );
   }
