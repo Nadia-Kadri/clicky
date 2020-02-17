@@ -6,7 +6,7 @@ class Header extends Component {
     return (
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div style={clickyStyle}>Clicky Game</div>
-        <div style={instructStyle}>Click on an image to begin!</div>
+        <div style={instructStyle}>{this.props.header}</div>
         <div style={scoreStyle}>
           <span className="currentScore">Current Score: {this.props.score} | </span>
           <span className="topScore">Top Score: {this.props.topScore}</span>
@@ -38,7 +38,8 @@ const scoreStyle = {
 
 Header.propTypes = {
   score: PropTypes.number.isRequired,
-  topScore: PropTypes.number.isRequired
+  topScore: PropTypes.number.isRequired,
+  header: PropTypes.string.isRequired,
 }
 
 export default Header;

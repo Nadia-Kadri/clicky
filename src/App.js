@@ -9,6 +9,7 @@ class App extends Component {
   state = {
     score: 0,
     topScore: 0,
+    header: 'Click on an image to begin!',
     animals: [
       {
         id: 1,
@@ -96,7 +97,8 @@ class App extends Component {
 
   checkAnimal = (animal) => {
     if(animal.click === true) {
-      alert("you lose")
+      // alert("you lose")
+      this.setState({ header: "You guessed incorrectly!" })
       this.setState({ animals: this.state.animals.map(animal => {
         animal.click = false
         return animal
@@ -105,6 +107,7 @@ class App extends Component {
       this.checkScore(this.state.score, this.state.topScore)
     } else {
       animal.click = true
+      this.setState({ header: "You guessed correctly!" })
       this.incrementScore()
     }
   }
@@ -126,8 +129,7 @@ class App extends Component {
   render () {
     return (
       <div>
-        {/* <Header /> */}
-        <Header score={this.state.score} topScore={this.state.topScore}/>
+        <Header score={this.state.score} topScore={this.state.topScore} header={this.state.header}/>
         <Instructions />
         <div className="container">
           <Animals onClick={this.onClick} animals={this.state.animals}/>
