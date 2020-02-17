@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Header from './components/layout/Header';
-import Instructions from './components/layout/Instructions';
-import Score from './components/Score';
+import Instructions from './components/Instructions';
+import Header from './components/Header';
 import Animals from './components/Animals';
 import './App.css';
 
@@ -127,9 +126,9 @@ class App extends Component {
   render () {
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
+        <Header score={this.state.score} topScore={this.state.topScore}/>
         <Instructions />
-        <Score score={this.state.score} topScore={this.state.topScore}/>
         <div className="container">
           <Animals onClick={this.onClick} animals={this.state.animals}/>
         </div>
